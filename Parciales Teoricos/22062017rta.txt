@@ -1,0 +1,22 @@
+1) a) falso, justamente tambien se lo llama procedimiento recursivo, asi que si puede ser recursivo.
+b) ni idea
+c) Verdadero, el simetrico para arboles que sean de grado mayor a 2 no existe (simetrico es izq raiz der)
+d) Si el puntero ledge no es nulo, quiere decir que a ese nodo le esta entrando un arco, es falso porque en los minimales solo salen arcos, no le entra ninguno
+e)es falso pero porque ademas de esta condicion se tienen que cumplir otras mas:
+- arbol aciclico
+- todo arco es desconectante
+- existe walk unico para todo x, y (camino sin direccion entre x e y)
+- sumatoria de nodos = sumatoria de arcos + 1
+
+2)a) hashing into buckets es metodo de acceso de hash pero cuando es dinamico. Aca tengo anotado lo del clustering, que es la mayor probabilidad que tiene una posicion de ser ocupada. Es para ver la performance de lo que seria la funcion de rehashing. Para evaluar la performance, el clustering se evalua en cada momento. Faltan cosas, pero viene por este lado.
+2)b) Las estructuras son 4, tenes la tabla de frecuencias que siempre arranca en 1 y una vez que pasas a la frecuencia siguiente vas a pasar el puntero abajo de todo devuelta, despues tenes el arbol binario que lo armas desde las hojas hasta la raiz teniendo en cuenta que todos los caracteres son hojas. Para saber si es 0 o 1, el arco del hijo izquierdo es 0 y el arco del hijo derecho es 1. Ahora la estructura que sigue es la pila[b], porque vos metes los 0 y 1 desde la hoja hasta la raiz, cuando siga despues de la raiz va a venir un caracter porque todos los caracteres son hojas, entonces va a cortar y sabe que hasta la raiz es el codigo del caracter anterior. Y despues para leerlo haces LIFO, lo lees desde la raiz hasta la hoja y ese es el codigo del caracter. Y despues la ultima estructura es [b]la del archivo original y archivo comprimido, vos vas a poner todos los codigos de caracteres uno al lado del otro y los concatenas formando de 8 bits para obtener que caracter en ASCII es.
+
+EDITO Y AGREGO EL PUNTO 3:
+
+3a) Las constraints se basan en tres tipos de integridades:
+-integridad de entidad: es usada para asegurar que los datos pertenecientes a una misma tabla tienen una unica manera de identificarse, es decir que cada fila tenga una PK capaz de identificar univocamente una fila y esa no puede ser nula.
+-integridad referencial: es usada para asegurar la coherencia entre datos de dos tablas, aca se hace referencia a la FK. Ademas las constraints referenciales permiten a los usuarios especificar claves primarias y foraneas para asegurar una relacion padre hijo.
+Hay tres tipos de constraints referenciales: ciclic referencial constraint, self referencing constraint y multiple path constraint.
+-integridad semantica: es la que nos asegura que los datos que vamos a almacenar tengan una apropiada configuracion y que respeten las restricciones definidas sobre los dominios o sobre los atributos. Son data type, default, unique, not null y check.
+
+3b) Una tabla temporal es una tabla creada cuyos datos son de existencia temporal. No son registradas en las tablas de diccionario de datos. No es posible alterarlas, si eliminarlas y crear los indices temporales que necesite una aplicacion. Las actualizaciones a una tabla temporal podrian no generar ningun log transaccional si asi se configurara. Un ejemplo en donde te conviene usarlas es como almacenamiento intermedio de consultas muy grandes ya que si usas tablas temporales podes crear tablas con resultados intermedios basados en consultas de menor tamaño en lugar de intentar ejecutar una consulta unica que sea demasiado grande y multiples joins.

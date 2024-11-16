@@ -1,0 +1,52 @@
+1)
+a_ Falso. Knuth transforma arbol n-ario en binario.
+b_ Creo que Verdadero. Arbol b+ almacena las claves en las hojas (maximales). Mientras que B también las guarda en nodos intermedios... Si la clave justo está en un intermedio, no necesitaría llegar a la hoja (como si pasaría en en el B+) => Menos búsqueda => Mejor performance.
+Igual no estoy seguro, habría que preguntar a alguien que sepa (?)
+c_ Verdadero. Leer post siguiente je
+d_ Falso. "Cuadrados Medios" es una función de Hashing que sirve para encontrar la posición en la tabla en base a la clave del elemento. Pueden haber claves distintas que, al aplicarse esta función, devuelvan un mismo valor generando una colisión que deberá resolverse de alguna otra manera (rehashing, chaining, etc.)
+e_ Creo que Verdadero. Por lo que entendí de los pdf, "transforma" un grafo irrestricto en uno bipartito (nodos y arcos).... (aunque quizá le estoy re pifiando).
+
+El resto de los puntos está en los pdf.......... =P
+
+De paso cuento que el sábado siguiente a estos 2 parciales (24/6) algunos puntos fueron "parecidos".... No tengo foto, pero eran:
+1)
+a) Lo mismo sobre Knuth.
+b) Árbol B es más performante para búsquedas por rango que el b+ (Falso)
+c) Heap Sort está implementado sobre árbol binario (Puse verdadero, además usa un vector para mejorar performance)
+d) No existe función inversa para Hash (Verdadero)
+e) En pfaltz, el llink del último arco agregado siempre será nulo. (Verdadero)
+
+2)
+a) diferencia entre árbol balanceado y avl en menos de 10 renglones
+b) Explicar para que sirven los algoritmos de rotación a izquierda o derecha
+(Casi igual al otro parcial...)
+
+3)
+a) Explicar en menos de una carilla todo sobre Back-Up y Restore
+b) Nombrar un tipo de secuenciador y describir.
+
+----------------------------------------------
+
+1)a) esta bien, es asi
+1)b) Es falsa para mi, el arbol B+ es mas performante que el arbol B para manejo de consultas de clave puntual porque se tienen punteros entre los branch node y entre los leaf node, entonces para mi es mas facil acceder a una clave puntual por esto
+1)c)Esta es verdadera y esta en el pdf de moscuzza de ordenamiento y busqueda y lo aclara, si los datos estan desordenados es mejor para el quicksort que si estan ordenados
+1d) Yo a esta le puse verdadera (no estoy seguro) tenia entendido que se podia usar tanto para hash como para rehash, pero puede ser que sea solo para hash
+1e) Esta es verdadera, la tenia anotada en la carpeta de una clase, se basa en un grafo bipartito el de Pfaltz y hay que poner las condiciones y que tenes una estructura para el arco y otra estructura para el nodo.
+
+2a) arbol completo es aquel que los nodos que no son maximales (o sea los que no son hojas) tienen que tener el mismo grado del arbol. El arbol lleno por su parte es un arbol completo y que ademas cumple que todas sus hojas se encuentran en el mismo nivel.
+2b) Los algoritmos de rotacion te sirven para balancear un arbol en el caso de estar desbalanceado.
+Si la futura raiz esta a la derecha entonces roto el arbol a izquierda, por otra parte si la futura raiz esta a la izquierda entonces roto el arbol a derecha.
+
+3a) En este punto tenes que hablar sobre las vistas con check option que es clave para que se cumpla la condicion del where cuando haces una vista y sino no se ejecuta, de las constraints que tienen los tres tipos de integridad que mencione arriba del otro parcial, de la integridad de los triggers y de los stored procedures.
+3b) Aca hay que poner que los indices se usan para cuando tenes un gran volumen de datos y que se lee de a una fila por vez. Podrias hablar de las IOT (tablas organizadas por indice) diciendo ademas que la tabla y el indice se ven como una misma estructura. Despues las caracteristicas de los indices son:
+-unicos/duplicados: son mutuamente excluyentes
+-compuestos: si tienen mas de una columna
+-clustered: si tienen los datos ordenados
+-function based index: es cuando le aplicas una funcion a un dato, por ejemplo UPPER(dato)
+
+Despues podrias complementar hablando un poco de los tipos de indices que hay, que son:
+-btree index
+-btree cluster index
+-reverse key index
+-hash
+-bitmap index

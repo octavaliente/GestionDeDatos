@@ -1,0 +1,32 @@
+1a) Verdadera, Un árbol-B se mantiene balanceado porque requiere que todos los nodos hoja se encuentren a la misma altura.
+1b) Para mi falsa
+1c) Verdadera, esta la dije arriba aparecia en otro parcial
+1d) Para mi falsa porque la profundidad puede ser mayor, por ejemplo en la carpeta yo tenia un arbol de grado 4 y que un nodo tiene una profundidad de 6, profundidad es la cantidad de arcos que hay de distancia entre la raiz y un cierto nodo
+1e) Verdadera, la dijo él en clase porque cumple las 4 condiciones
+
+2a) y 2b) son iguales al primer parcial que resolvi de arriba
+
+3a)Una view es un conjunto de columnas, ya sea reales o virtuales, de una misma tabla o no, con algún filtro determinado o no.
+De esta forma, es una presentación adaptada de los datos contenidos en una o más tablas, o en otras vistas. Una vista toma la salida resultante de una consulta y la trata como una tabla.
+Se pueden usar vistas en la mayoría de las situaciones en las que se pueden usar tablas.
+Caracteristicas:
+- tiene nombre especifico
+-No aloca espacio de almacenamiento
+-No contiene datos almacenados.
+-Está definida por una consulta que consulta datos de una o varias tablas.
+
+Las vistas se pueden utilizar para:
+•Suministrar un nivel adicional de seguridad restringiendo el acceso a un conjunto predeterminado de filas o columnas de una tabla.
+•Ocultar la complejidad de los datos.
+•Simplificar sentencias al usuario.
+•Presentar los datos desde una perspectiva diferente a la de la tabla base.
+•Aislar a las aplicaciones de los cambios en la tabla base.
+
+Tambien y con respecto a la seguridad estaria bueno mencionar el uso del with check option ya que con esto se puede actualizar siempre y cuando el checkeo de la opción en el where sea verdadero.
+
+3b) Aca hay que encararlo por el lado de las secuencias para mi. Los generadores de secuencias proveen una serie de números secuenciales, especialmente usados en entornos multiusuarios para generar una números secuenciales y únicos sin el overheadde I/O a disco o el lockeotransaccional. Los motores de base de datos proveen diferentes formas de implementar secuencias a través de:
+•Tipo de Dato de una columna (Informix)
+•Propiedades de una columna (SqlServer, Mysql, DB2)
+•Objeto Sequence(Oracle, Informix, PostgreSQL, DB2, SqlServer)
+
+En el caso de propiedades de una columna, esta bueno mencionar el identity como ejemplo. Existen motores que poseen propiedades de columna que permite realizar lo mismo que una secuencia. Al insertar una fila en dicha tabla, el motor va a buscar el próximo nro. del más alto existente en la tabla.
