@@ -2,7 +2,7 @@
 T-SQL
 -- table
 CREATE TABLE ventas( 
-	venta_codigo char(8),
+	venta_codigo char(8) primary key,
 	venta_detalle char(50),
 	venta_movimientos INT,
 	venta_precio DECIMAL(12,2),
